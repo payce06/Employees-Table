@@ -17,3 +17,15 @@ form.addEventListener('submit', function (e) {
          <td>${position}</td>
          <td><button class="delete-btn">Delete</button></td>
         `;
+        
+        tableBody.appendChild(row);
+        form.reset();
+    }
+});
+
+tableBody.addEventListener('click', function (e) {
+    if(e.target.classList.contains('delete-btn')) {
+        const row = e.target.closest('tr');
+        row.remove();
+    }
+});
